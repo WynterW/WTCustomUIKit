@@ -7,15 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CAA1558B1FB1863700FCB984 /* StepperView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA155891FB1638700FCB984 /* StepperView.m */; };
+		CAA1558C1FB1863E00FCB984 /* StepperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA1558A1FB1638700FCB984 /* StepperView.xib */; };
+		CAA155901FB18EE800FCB984 /* StarView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA1558F1FB18EE800FCB984 /* StarView.m */; };
+		CAA155981FB195E900FCB984 /* MenuSelectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA155931FB195E900FCB984 /* MenuSelectItem.m */; };
+		CAA155991FB195E900FCB984 /* MenuSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA155951FB195E900FCB984 /* MenuSelectTableViewCell.m */; };
+		CAA1559A1FB195E900FCB984 /* MenuSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA155971FB195E900FCB984 /* MenuSelectViewController.m */; };
+		CAC0FE8D1FB1A308000CF49D /* SegmentedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC0FE8C1FB1A308000CF49D /* SegmentedController.m */; };
+		CAC0FE921FB1A57C000CF49D /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC0FE911FB1A574000CF49D /* UIView+Frame.m */; };
+		CAC0FE951FB1A7CF000CF49D /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC0FE941FB1A7CF000CF49D /* TestViewController.m */; };
 		CAF555DC1FB1448C00CD57F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF555DB1FB1448C00CD57F9 /* AppDelegate.m */; };
 		CAF555DF1FB1448C00CD57F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF555DE1FB1448C00CD57F9 /* ViewController.m */; };
 		CAF555E21FB1448C00CD57F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF555E01FB1448C00CD57F9 /* Main.storyboard */; };
 		CAF555E41FB1448C00CD57F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF555E31FB1448C00CD57F9 /* Assets.xcassets */; };
 		CAF555E71FB1448C00CD57F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF555E51FB1448C00CD57F9 /* LaunchScreen.storyboard */; };
 		CAF555EA1FB1448C00CD57F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF555E91FB1448C00CD57F9 /* main.m */; };
+		CAF556031FB1500700CD57F9 /* HotelCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF555F61FB14F5800CD57F9 /* HotelCalendarCell.m */; };
+		CAF556041FB1500700CD57F9 /* HotelCalendarHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF555F91FB14F5800CD57F9 /* HotelCalendarHeaderReusableView.m */; };
+		CAF556051FB1500700CD57F9 /* NSCalendar+Ex.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF555FD1FB14F5800CD57F9 /* NSCalendar+Ex.m */; };
+		CAF556061FB1500700CD57F9 /* HotelCalendarCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF556001FB14F5800CD57F9 /* HotelCalendarCollectionViewFlowLayout.m */; };
+		CAF556081FB1501700CD57F9 /* HotelCalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF555F71FB14F5800CD57F9 /* HotelCalendarCell.xib */; };
+		CAF556091FB1501700CD57F9 /* HotelCalendarHeaderReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF555FA1FB14F5800CD57F9 /* HotelCalendarHeaderReusableView.xib */; };
+		CAF5560C1FB1516000CD57F9 /* ViewController+HotelCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF5560B1FB1516000CD57F9 /* ViewController+HotelCalendarViewController.m */; };
+		CAF5560F1FB153C700CD57F9 /* HotelCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF5560E1FB153C700CD57F9 /* HotelCalendarViewController.m */; };
+		CAF556151FB15BA200CD57F9 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF556141FB15BA200CD57F9 /* DatePickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CAA155881FB1638700FCB984 /* StepperView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StepperView.h; sourceTree = "<group>"; };
+		CAA155891FB1638700FCB984 /* StepperView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StepperView.m; sourceTree = "<group>"; };
+		CAA1558A1FB1638700FCB984 /* StepperView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepperView.xib; sourceTree = "<group>"; };
+		CAA1558E1FB18EE800FCB984 /* StarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarView.h; sourceTree = "<group>"; };
+		CAA1558F1FB18EE800FCB984 /* StarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarView.m; sourceTree = "<group>"; };
+		CAA155921FB195E900FCB984 /* MenuSelectItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuSelectItem.h; sourceTree = "<group>"; };
+		CAA155931FB195E900FCB984 /* MenuSelectItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuSelectItem.m; sourceTree = "<group>"; };
+		CAA155941FB195E900FCB984 /* MenuSelectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuSelectTableViewCell.h; sourceTree = "<group>"; };
+		CAA155951FB195E900FCB984 /* MenuSelectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuSelectTableViewCell.m; sourceTree = "<group>"; };
+		CAA155961FB195E900FCB984 /* MenuSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuSelectViewController.h; sourceTree = "<group>"; };
+		CAA155971FB195E900FCB984 /* MenuSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuSelectViewController.m; sourceTree = "<group>"; };
+		CAC0FE8B1FB1A308000CF49D /* SegmentedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedController.h; sourceTree = "<group>"; };
+		CAC0FE8C1FB1A308000CF49D /* SegmentedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedController.m; sourceTree = "<group>"; };
+		CAC0FE901FB1A574000CF49D /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		CAC0FE911FB1A574000CF49D /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		CAC0FE931FB1A7CF000CF49D /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		CAC0FE941FB1A7CF000CF49D /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		CAF555D71FB1448C00CD57F9 /* WTCustomUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTCustomUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF555DA1FB1448C00CD57F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CAF555DB1FB1448C00CD57F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +61,22 @@
 		CAF555E61FB1448C00CD57F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAF555E81FB1448C00CD57F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAF555E91FB1448C00CD57F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CAF555F51FB14F5800CD57F9 /* HotelCalendarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelCalendarCell.h; sourceTree = "<group>"; };
+		CAF555F61FB14F5800CD57F9 /* HotelCalendarCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelCalendarCell.m; sourceTree = "<group>"; };
+		CAF555F71FB14F5800CD57F9 /* HotelCalendarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelCalendarCell.xib; sourceTree = "<group>"; };
+		CAF555F81FB14F5800CD57F9 /* HotelCalendarHeaderReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelCalendarHeaderReusableView.h; sourceTree = "<group>"; };
+		CAF555F91FB14F5800CD57F9 /* HotelCalendarHeaderReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelCalendarHeaderReusableView.m; sourceTree = "<group>"; };
+		CAF555FA1FB14F5800CD57F9 /* HotelCalendarHeaderReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelCalendarHeaderReusableView.xib; sourceTree = "<group>"; };
+		CAF555FC1FB14F5800CD57F9 /* NSCalendar+Ex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+Ex.h"; sourceTree = "<group>"; };
+		CAF555FD1FB14F5800CD57F9 /* NSCalendar+Ex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+Ex.m"; sourceTree = "<group>"; };
+		CAF555FF1FB14F5800CD57F9 /* HotelCalendarCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelCalendarCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		CAF556001FB14F5800CD57F9 /* HotelCalendarCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelCalendarCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		CAF5560A1FB1516000CD57F9 /* ViewController+HotelCalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+HotelCalendarViewController.h"; sourceTree = "<group>"; };
+		CAF5560B1FB1516000CD57F9 /* ViewController+HotelCalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController+HotelCalendarViewController.m"; sourceTree = "<group>"; };
+		CAF5560D1FB153C700CD57F9 /* HotelCalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotelCalendarViewController.h; sourceTree = "<group>"; };
+		CAF5560E1FB153C700CD57F9 /* HotelCalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotelCalendarViewController.m; sourceTree = "<group>"; };
+		CAF556131FB15BA200CD57F9 /* DatePickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
+		CAF556141FB15BA200CD57F9 /* DatePickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +90,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CAA155871FB1638700FCB984 /* Stepper */ = {
+			isa = PBXGroup;
+			children = (
+				CAA155881FB1638700FCB984 /* StepperView.h */,
+				CAA155891FB1638700FCB984 /* StepperView.m */,
+				CAA1558A1FB1638700FCB984 /* StepperView.xib */,
+			);
+			path = Stepper;
+			sourceTree = "<group>";
+		};
+		CAA1558D1FB18EE800FCB984 /* StarView */ = {
+			isa = PBXGroup;
+			children = (
+				CAA1558E1FB18EE800FCB984 /* StarView.h */,
+				CAA1558F1FB18EE800FCB984 /* StarView.m */,
+			);
+			path = StarView;
+			sourceTree = "<group>";
+		};
+		CAA155911FB195E900FCB984 /* MenuSelectView */ = {
+			isa = PBXGroup;
+			children = (
+				CAA155921FB195E900FCB984 /* MenuSelectItem.h */,
+				CAA155931FB195E900FCB984 /* MenuSelectItem.m */,
+				CAA155941FB195E900FCB984 /* MenuSelectTableViewCell.h */,
+				CAA155951FB195E900FCB984 /* MenuSelectTableViewCell.m */,
+				CAA155961FB195E900FCB984 /* MenuSelectViewController.h */,
+				CAA155971FB195E900FCB984 /* MenuSelectViewController.m */,
+			);
+			path = MenuSelectView;
+			sourceTree = "<group>";
+		};
+		CAC0FE8A1FB1A308000CF49D /* SegmentedController */ = {
+			isa = PBXGroup;
+			children = (
+				CAC0FE8B1FB1A308000CF49D /* SegmentedController.h */,
+				CAC0FE8C1FB1A308000CF49D /* SegmentedController.m */,
+			);
+			path = SegmentedController;
+			sourceTree = "<group>";
+		};
+		CAC0FE8E1FB1A54F000CF49D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				CAC0FE8F1FB1A574000CF49D /* UIView */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		CAC0FE8F1FB1A574000CF49D /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				CAC0FE901FB1A574000CF49D /* UIView+Frame.h */,
+				CAC0FE911FB1A574000CF49D /* UIView+Frame.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		CAF555CE1FB1448C00CD57F9 = {
 			isa = PBXGroup;
 			children = (
@@ -58,17 +167,104 @@
 		CAF555D91FB1448C00CD57F9 /* WTCustomUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				CAF555DA1FB1448C00CD57F9 /* AppDelegate.h */,
-				CAF555DB1FB1448C00CD57F9 /* AppDelegate.m */,
+				CAC0FE8E1FB1A54F000CF49D /* Category */,
+				CAF555F21FB14F3C00CD57F9 /* CustomUIKit */,
+				CAF555F11FB144F700CD57F9 /* AppDelegate */,
+				CAF555F01FB144B600CD57F9 /* OtherSource */,
 				CAF555DD1FB1448C00CD57F9 /* ViewController.h */,
 				CAF555DE1FB1448C00CD57F9 /* ViewController.m */,
+				CAC0FE931FB1A7CF000CF49D /* TestViewController.h */,
+				CAC0FE941FB1A7CF000CF49D /* TestViewController.m */,
+				CAF5560A1FB1516000CD57F9 /* ViewController+HotelCalendarViewController.h */,
+				CAF5560B1FB1516000CD57F9 /* ViewController+HotelCalendarViewController.m */,
+			);
+			path = WTCustomUIKit;
+			sourceTree = "<group>";
+		};
+		CAF555F01FB144B600CD57F9 /* OtherSource */ = {
+			isa = PBXGroup;
+			children = (
 				CAF555E01FB1448C00CD57F9 /* Main.storyboard */,
 				CAF555E31FB1448C00CD57F9 /* Assets.xcassets */,
 				CAF555E51FB1448C00CD57F9 /* LaunchScreen.storyboard */,
 				CAF555E81FB1448C00CD57F9 /* Info.plist */,
 				CAF555E91FB1448C00CD57F9 /* main.m */,
 			);
-			path = WTCustomUIKit;
+			path = OtherSource;
+			sourceTree = "<group>";
+		};
+		CAF555F11FB144F700CD57F9 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CAF555DA1FB1448C00CD57F9 /* AppDelegate.h */,
+				CAF555DB1FB1448C00CD57F9 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		CAF555F21FB14F3C00CD57F9 /* CustomUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				CAC0FE8A1FB1A308000CF49D /* SegmentedController */,
+				CAA155911FB195E900FCB984 /* MenuSelectView */,
+				CAA1558D1FB18EE800FCB984 /* StarView */,
+				CAA155871FB1638700FCB984 /* Stepper */,
+				CAF556101FB15B2300CD57F9 /* DatePickerView */,
+				CAF555F31FB14F5800CD57F9 /* HotelCalendar */,
+			);
+			path = CustomUIKit;
+			sourceTree = "<group>";
+		};
+		CAF555F31FB14F5800CD57F9 /* HotelCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				CAF555F41FB14F5800CD57F9 /* CalendarCell */,
+				CAF555FB1FB14F5800CD57F9 /* Category */,
+				CAF555FE1FB14F5800CD57F9 /* CollectionViewFlowLayout */,
+				CAF5560D1FB153C700CD57F9 /* HotelCalendarViewController.h */,
+				CAF5560E1FB153C700CD57F9 /* HotelCalendarViewController.m */,
+			);
+			path = HotelCalendar;
+			sourceTree = "<group>";
+		};
+		CAF555F41FB14F5800CD57F9 /* CalendarCell */ = {
+			isa = PBXGroup;
+			children = (
+				CAF555F51FB14F5800CD57F9 /* HotelCalendarCell.h */,
+				CAF555F61FB14F5800CD57F9 /* HotelCalendarCell.m */,
+				CAF555F71FB14F5800CD57F9 /* HotelCalendarCell.xib */,
+				CAF555F81FB14F5800CD57F9 /* HotelCalendarHeaderReusableView.h */,
+				CAF555F91FB14F5800CD57F9 /* HotelCalendarHeaderReusableView.m */,
+				CAF555FA1FB14F5800CD57F9 /* HotelCalendarHeaderReusableView.xib */,
+			);
+			path = CalendarCell;
+			sourceTree = "<group>";
+		};
+		CAF555FB1FB14F5800CD57F9 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				CAF555FC1FB14F5800CD57F9 /* NSCalendar+Ex.h */,
+				CAF555FD1FB14F5800CD57F9 /* NSCalendar+Ex.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		CAF555FE1FB14F5800CD57F9 /* CollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				CAF555FF1FB14F5800CD57F9 /* HotelCalendarCollectionViewFlowLayout.h */,
+				CAF556001FB14F5800CD57F9 /* HotelCalendarCollectionViewFlowLayout.m */,
+			);
+			path = CollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
+		CAF556101FB15B2300CD57F9 /* DatePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				CAF556131FB15BA200CD57F9 /* DatePickerViewController.h */,
+				CAF556141FB15BA200CD57F9 /* DatePickerViewController.m */,
+			);
+			path = DatePickerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +325,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAA1558C1FB1863E00FCB984 /* StepperView.xib in Resources */,
+				CAF556081FB1501700CD57F9 /* HotelCalendarCell.xib in Resources */,
+				CAF556091FB1501700CD57F9 /* HotelCalendarHeaderReusableView.xib in Resources */,
 				CAF555E71FB1448C00CD57F9 /* LaunchScreen.storyboard in Resources */,
 				CAF555E41FB1448C00CD57F9 /* Assets.xcassets in Resources */,
 				CAF555E21FB1448C00CD57F9 /* Main.storyboard in Resources */,
@@ -142,8 +341,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAC0FE921FB1A57C000CF49D /* UIView+Frame.m in Sources */,
+				CAC0FE8D1FB1A308000CF49D /* SegmentedController.m in Sources */,
+				CAA1559A1FB195E900FCB984 /* MenuSelectViewController.m in Sources */,
+				CAA1558B1FB1863700FCB984 /* StepperView.m in Sources */,
+				CAF556031FB1500700CD57F9 /* HotelCalendarCell.m in Sources */,
+				CAA155901FB18EE800FCB984 /* StarView.m in Sources */,
+				CAC0FE951FB1A7CF000CF49D /* TestViewController.m in Sources */,
+				CAF556041FB1500700CD57F9 /* HotelCalendarHeaderReusableView.m in Sources */,
+				CAF556051FB1500700CD57F9 /* NSCalendar+Ex.m in Sources */,
+				CAF556061FB1500700CD57F9 /* HotelCalendarCollectionViewFlowLayout.m in Sources */,
 				CAF555DF1FB1448C00CD57F9 /* ViewController.m in Sources */,
+				CAF5560C1FB1516000CD57F9 /* ViewController+HotelCalendarViewController.m in Sources */,
+				CAF5560F1FB153C700CD57F9 /* HotelCalendarViewController.m in Sources */,
 				CAF555EA1FB1448C00CD57F9 /* main.m in Sources */,
+				CAA155991FB195E900FCB984 /* MenuSelectTableViewCell.m in Sources */,
+				CAA155981FB195E900FCB984 /* MenuSelectItem.m in Sources */,
+				CAF556151FB15BA200CD57F9 /* DatePickerViewController.m in Sources */,
 				CAF555DC1FB1448C00CD57F9 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,11 +493,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WTCustomUIKit/Info.plist;
+				DEVELOPMENT_TEAM = 7P64MZ97H2;
+				INFOPLIST_FILE = "$(SRCROOT)/WTCustomUIKit/OtherSource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wynter.WTCustomUIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rc.LanXiTour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -292,11 +508,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WTCustomUIKit/Info.plist;
+				DEVELOPMENT_TEAM = 7P64MZ97H2;
+				INFOPLIST_FILE = "$(SRCROOT)/WTCustomUIKit/OtherSource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wynter.WTCustomUIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rc.LanXiTour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

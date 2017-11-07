@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TestViewController.h
 //  WTCustomUIKit
 //
 //  Created by Wynter on 2017/11/7.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITableViewController
+@interface TestViewController : UIViewController
 
 
 @end
-

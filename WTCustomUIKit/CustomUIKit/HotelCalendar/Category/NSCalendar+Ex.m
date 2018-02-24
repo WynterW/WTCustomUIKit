@@ -30,11 +30,13 @@
 }
 
 + (NSInteger)monthsFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate {
-    NSCalendarUnit calendarUnit = NSCalendarUnitMonth;
-    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:calendarUnit fromDate:fromDate toDate:toDate options:0];
-    return dateComponents.month + 2;
+    NSCalendarUnit calendarUnit = NSCalendarUnitYear | NSCalendarUnitMonth;
+    NSDateComponents *fromDateComponents = [[NSCalendar currentCalendar] components:calendarUnit fromDate:fromDate];
+    NSDateComponents *toDateComponents = [[NSCalendar currentCalendar] components:calendarUnit fromDate:toDate];
+    NSInteger yaer = labs(fromDateComponents.year - toDateComponents.year);
+    NSInteger month = (yaer * 12) - (fromDateComponents.month - 1) + toDateComponents.month;
+    return month;
 }
-
 
 + (NSDate *)date:(NSDate *)fromDate addMonth:(NSInteger)month {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];

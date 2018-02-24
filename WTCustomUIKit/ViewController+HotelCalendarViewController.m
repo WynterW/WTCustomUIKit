@@ -53,6 +53,8 @@
     HotelCalendarViewController *vc = [[HotelCalendarViewController alloc]init];
     vc.delegate = self;
     vc.dataSource = self;
+    vc.modalPresentationStyle = UIModalPresentationCustom;
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:vc animated:NO completion:nil];
 }
 

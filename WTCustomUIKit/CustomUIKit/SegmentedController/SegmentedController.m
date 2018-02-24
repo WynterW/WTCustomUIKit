@@ -14,7 +14,7 @@
 @property (nonatomic, strong) UIView *tabarView;
 @property (nonatomic, strong) UIScrollView *bodyScrollView;
 @property (nonatomic, strong) UIButton *selectedBtn;     /**< 选中的btn*/
-@property (nonatomic, strong) UIView *btnBackgroundView; /**< 按钮的背景视图*/
+@property (nonatomic, strong) UIView *tagView; /**< 标记选中*/
 
 @end
 
@@ -39,14 +39,15 @@
 
     NSInteger count = [_childViewControllerAry count];
 
-    _btnBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 42, (CGRectGetWidth(self.view.frame) / count), 3)];
-    _btnBackgroundView.backgroundColor = _selectedColor ?: [UIColor cyanColor];
-    [_tabarView addSubview:_btnBackgroundView];
+    _tagView = [[UIView alloc] initWithFrame:CGRectMake(0, 42, (CGRectGetWidth(self.view.frame) / count), 3)];
+    _tagView.size = _tagViewSize.width ? _tagViewSize : _tagView.size;
+    _tagView.backgroundColor = _selectedColor ?: [UIColor cyanColor];
+    [_tabarView addSubview:_tagView];
 
     for (NSInteger i = 0; i < count; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.frame = CGRectMake(i * (CGRectGetWidth(self.view.frame) / count), 0, (CGRectGetWidth(self.view.frame) / count), 45);
-        btn.titleLabel.font = [UIFont systemFontOfSize:15];
+        btn.titleLabel.font = _normalFont ?: [UIFont systemFontOfSize:15];
         [btn setTitleColor:_normalColor ?: [UIColor grayColor] forState:UIControlStateNormal];
         [btn setTitleColor:_selectedColor ?: [UIColor cyanColor] forState:UIControlStateSelected];
         [btn addTarget:self action:@selector(clickTitle:) forControlEvents:UIControlEventTouchUpInside];
@@ -61,6 +62,7 @@
     _bodyScrollView.showsHorizontalScrollIndicator = NO;
     _bodyScrollView.showsVerticalScrollIndicator = NO;
     _bodyScrollView.pagingEnabled = YES;
+    _bodyScrollView.bounces = NO;
     _bodyScrollView.delegate = self;
     [self.view addSubview:_bodyScrollView];
 
@@ -74,8 +76,8 @@
         if (view.tag == 1000) {
             _selectedBtn = (UIButton *) view;
             _selectedBtn.selected = YES;
-            _selectedBtn.titleLabel.font = [UIFont systemFontOfSize:15.f];
-            _btnBackgroundView.centerX = _selectedBtn.centerX;
+            _selectedBtn.titleLabel.font = _selectedFont ?: [UIFont systemFontOfSize:15.f];
+            _tagView.centerX = _selectedBtn.centerX;
         }
     }
 }
@@ -90,7 +92,7 @@
     btn.selected = YES;
     [UIView animateWithDuration:0.5
         animations:^{
-            _btnBackgroundView.centerX = btn.centerX;
+            _tagView.centerX = btn.centerX;
         }
         completion:^(BOOL finished) {
             _selectedBtn = btn;
@@ -129,7 +131,7 @@
 #pragma mark - 设置按钮状体
 - (void)setBtnState {
     _selectedBtn.selected = NO;
-    _selectedBtn.titleLabel.font = [UIFont systemFontOfSize:14.f];
+    _selectedBtn.titleLabel.font = _normalFont ?: [UIFont systemFontOfSize:14.f];
     for (UIView *view in _tabarView.subviews) {
         NSInteger btnTag = self.currentIndex + 1000;
         if (view.tag == btnTag) {
@@ -137,25 +139,28 @@
             btn.selected = YES;
             [UIView animateWithDuration:0.5
                 animations:^{
-                    _btnBackgroundView.centerX = btn.centerX;
+                    _tagView.centerX = btn.centerX;
                 }
                 completion:^(BOOL finished) {
                     _selectedBtn = btn;
-                    _selectedBtn.titleLabel.font = [UIFont systemFontOfSize:15.f];
+                    _selectedBtn.titleLabel.font = _selectedFont ?: [UIFont systemFontOfSize:15.f];
                 }];
         } else {
             if ([view isKindOfClass:[UIButton class]]) {
                 UIButton *btn = (UIButton *) view;
                 btn.selected = NO;
-                btn.titleLabel.font = [UIFont systemFontOfSize:14.f];
+                btn.titleLabel.font = _normalFont ?: [UIFont systemFontOfSize:14.f];
             }
         }
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setTagViewSize:(CGSize)tagViewSize {
+    _tagViewSize = tagViewSize;
+    if (_tagView) {
+        _tagView.size = tagViewSize;
+        _tagView.centerX = _selectedBtn.centerX;
+    }
 }
 
 @end

@@ -43,7 +43,7 @@
     }
     
     cell.textLabel.text = _dataSource[indexPath.row];
-    if ([cell.textLabel.text isEqualToString:@"自定义Stepper"]) {
+    if ([cell.textLabel.text isEqualToString:@"增减控件"]) {
         cell.accessoryView = self.accessoryView;
     } else if ([cell.textLabel.text isEqualToString:@"评星控件"]) {
         cell.accessoryView = self.starView;
@@ -87,7 +87,9 @@
     vc.dateBlock = ^(NSDate *date) {
         NSLog(@"%@", date);
     };
-    [self presentViewController:vc animated:NO completion:nil];
+    vc.modalPresentationStyle = UIModalPresentationCustom;
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 #pragma mark - StepperView

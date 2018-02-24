@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA4D01261FD7DB6D00CAA5CF /* UIButton+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4D01251FD7DB6D00CAA5CF /* UIButton+Event.m */; };
 		CAA1558B1FB1863700FCB984 /* StepperView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA155891FB1638700FCB984 /* StepperView.m */; };
 		CAA1558C1FB1863E00FCB984 /* StepperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA1558A1FB1638700FCB984 /* StepperView.xib */; };
 		CAA155901FB18EE800FCB984 /* StarView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA1558F1FB18EE800FCB984 /* StarView.m */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA4D01241FD7DB6D00CAA5CF /* UIButton+Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Event.h"; sourceTree = "<group>"; };
+		CA4D01251FD7DB6D00CAA5CF /* UIButton+Event.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Event.m"; sourceTree = "<group>"; };
 		CAA155881FB1638700FCB984 /* StepperView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StepperView.h; sourceTree = "<group>"; };
 		CAA155891FB1638700FCB984 /* StepperView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StepperView.m; sourceTree = "<group>"; };
 		CAA1558A1FB1638700FCB984 /* StepperView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepperView.xib; sourceTree = "<group>"; };
@@ -90,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA4D01231FD7DB4300CAA5CF /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				CA4D01241FD7DB6D00CAA5CF /* UIButton+Event.h */,
+				CA4D01251FD7DB6D00CAA5CF /* UIButton+Event.m */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
 		CAA155871FB1638700FCB984 /* Stepper */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +146,7 @@
 		CAC0FE8E1FB1A54F000CF49D /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				CA4D01231FD7DB4300CAA5CF /* UIButton */,
 				CAC0FE8F1FB1A574000CF49D /* UIView */,
 			);
 			path = Category;
@@ -346,6 +359,7 @@
 				CAA1559A1FB195E900FCB984 /* MenuSelectViewController.m in Sources */,
 				CAA1558B1FB1863700FCB984 /* StepperView.m in Sources */,
 				CAF556031FB1500700CD57F9 /* HotelCalendarCell.m in Sources */,
+				CA4D01261FD7DB6D00CAA5CF /* UIButton+Event.m in Sources */,
 				CAA155901FB18EE800FCB984 /* StarView.m in Sources */,
 				CAC0FE951FB1A7CF000CF49D /* TestViewController.m in Sources */,
 				CAF556041FB1500700CD57F9 /* HotelCalendarHeaderReusableView.m in Sources */,

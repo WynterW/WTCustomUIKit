@@ -90,6 +90,7 @@ static const CGFloat kToolBarH = 44.f;
         UIDatePicker *datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, kToolBarH, CGRectGetWidth(self.view.frame), kDatePickerViewH)];
         [datePickerView setLocale:[NSLocale currentLocale]];
         [datePickerView setMinimumDate:self.minDate];
+        [datePickerView setMaximumDate:self.maxDate];
         [datePickerView setDatePickerMode:self.datePickerMode];
         [datePickerView setDate:self.selectedDate animated:YES];
         _datePickerView = datePickerView;
@@ -115,25 +116,6 @@ static const CGFloat kToolBarH = 44.f;
     
     if (selectedDate) {
         [self.datePickerView setDate:selectedDate];
-    }
-}
-
-- (void)setMinDate:(NSDate *)minDate {
-    _minDate = minDate;
-    
-    if (minDate) {
-        [self.datePickerView setMinimumDate:minDate];
-    }
-    
-    //NSDate *nowDate = [NSDate new];
-    //NSDate *minDate = [NSDate dateWithTimeInterval:-24 * 60 * 60 sinceDate:nowDate];
-}
-
-- (void)setMaxDate:(NSDate *)maxDate {
-    _maxDate = maxDate;
-    
-    if (maxDate) {
-        [self.datePickerView setMaximumDate:maxDate];
     }
 }
 

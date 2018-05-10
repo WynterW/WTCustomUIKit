@@ -54,7 +54,6 @@ static const CGFloat kCellH = 40.f;
     _selectListTableView.backgroundColor = [UIColor clearColor];
     [_selectListView addSubview:_selectListTableView];
 
-
     UITapGestureRecognizer *dismissTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
     dismissTap.delegate = self;
     [self.view addGestureRecognizer:dismissTap];

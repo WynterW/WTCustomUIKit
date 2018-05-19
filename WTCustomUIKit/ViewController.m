@@ -14,6 +14,7 @@
 #import "MenuSelectViewController.h"
 #import "SegmentedController.h"
 #import "TestViewController.h"
+#import "ChooseMenuViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSArray *dataSource;
@@ -74,6 +75,9 @@
         case 5:
             [self segmentedController];
             break;
+            case 6:
+            [self chooseMenuViewController];
+            break;
         default:
             break;
     }
@@ -115,6 +119,17 @@
     return _starView;
 }
 
+#pragma mark - 关联菜单选择器
+- (void)chooseMenuViewController {
+    ChooseMenuViewController *vc = [[ChooseMenuViewController alloc] init];
+    vc.modalPresentationStyle = UIModalPresentationCustom;
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    vc.type = CompanySelectTypeIndustry;
+    vc.chooseFinish = ^(CompanySelectType type, NSArray<CompanySelectTypeItem *> *selectedAry) {
+        NSLog(@"%@", selectedAry);
+    };
+    [self presentViewController:vc animated:NO completion:nil];
+}
 
 #pragma mark - MenuSelectViewController
 - (void)menuSelectView {
@@ -154,7 +169,7 @@
 #pragma mark * init values
 - (NSArray *)dataSource {
     if (!_dataSource) {
-        _dataSource = @[@"酒店日历", @"日期选择框", @"增减控件", @"评星控件", @"右侧弹出选择框", @"分段视图控制器"];
+        _dataSource = @[@"酒店日历", @"日期选择框", @"增减控件", @"评星控件", @"右侧弹出选择框", @"分段视图控制器",@"关联菜单选择器"];
     }
     return _dataSource;
 }

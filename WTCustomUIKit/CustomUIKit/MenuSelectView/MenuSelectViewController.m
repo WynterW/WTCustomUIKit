@@ -127,7 +127,7 @@ static const CGFloat kCellH = 40.f;
         [UIView animateWithDuration:0.3
             animations:^{
 
-                _selectListView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+                self.selectListView.transform = CGAffineTransformMakeScale(0.01, 0.01);
 
             }
             completion:^(BOOL finished) {

@@ -92,10 +92,10 @@
     btn.selected = YES;
     [UIView animateWithDuration:0.5
         animations:^{
-            _tagView.centerX = btn.centerX;
+            self.tagView.centerX = btn.centerX;
         }
         completion:^(BOOL finished) {
-            _selectedBtn = btn;
+            self.selectedBtn = btn;
         }];
 
     CGFloat offsetX = (btn.tag - 1000) * _bodyScrollView.frame.size.width;
@@ -139,11 +139,11 @@
             btn.selected = YES;
             [UIView animateWithDuration:0.5
                 animations:^{
-                    _tagView.centerX = btn.centerX;
+                    self.tagView.centerX = btn.centerX;
                 }
                 completion:^(BOOL finished) {
-                    _selectedBtn = btn;
-                    _selectedBtn.titleLabel.font = _selectedFont ?: [UIFont systemFontOfSize:15.f];
+                    self.selectedBtn = btn;
+                    self.selectedBtn.titleLabel.font = self.selectedFont ?: [UIFont systemFontOfSize:15.f];
                 }];
         } else {
             if ([view isKindOfClass:[UIButton class]]) {

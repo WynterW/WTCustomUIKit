@@ -15,6 +15,8 @@
 #import "SegmentedController.h"
 #import "TestViewController.h"
 #import "ChooseMenuViewController.h"
+#import "PublicCellListTableViewController.h"
+#import "TopSheetDemoViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSArray *dataSource;
@@ -75,8 +77,14 @@
         case 5:
             [self segmentedController];
             break;
-            case 6:
+        case 6:
             [self chooseMenuViewController];
+            break;
+        case 7:
+            [self publicCell];
+            break;
+        case 8:
+            [self topSheetViewController];
             break;
         default:
             break;
@@ -151,7 +159,7 @@
     _selectListVC.clickBlock = ^(NSInteger selectIndex) {
         NSLog(@"%zi", selectIndex);
     };
-    [_selectListVC show];    
+    [_selectListVC show];
 }
 
 #pragma mark - 分段控制器
@@ -166,11 +174,26 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark - 公用cell
+- (void)publicCell {
+    PublicCellListTableViewController *vc = [[PublicCellListTableViewController alloc]init];
+    vc.title = @"公用cell示例";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - 顶部弹出选择
+- (void)topSheetViewController {
+    TopSheetDemoViewController *vc = [[TopSheetDemoViewController alloc]init];
+    vc.title = @"公用cell示例";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 #pragma mark * init values
 - (NSArray *)dataSource {
     if (!_dataSource) {
-        _dataSource = @[@"酒店日历", @"日期选择框", @"增减控件", @"评星控件", @"右侧弹出选择框", @"分段视图控制器",@"关联菜单选择器"];
+        _dataSource = @[@"酒店日历", @"日期选择框", @"增减控件", @"评星控件", @"右侧弹出选择框", @"分段视图控制器",@"关联菜单选择器",@"公用cell",@"顶部弹出选择器"];
     }
     return _dataSource;
 }
 @end
+

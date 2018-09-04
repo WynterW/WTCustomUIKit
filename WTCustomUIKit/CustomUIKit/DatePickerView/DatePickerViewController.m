@@ -130,6 +130,7 @@ static const CGFloat kToolBarH = 44.f;
     
     if (titleName) {
         self.titleLb.text = titleName;
+        [self.titleLb sizeToFit];
     }
 }
 

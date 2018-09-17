@@ -53,6 +53,7 @@
 		CAC0FE8D1FB1A308000CF49D /* SegmentedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC0FE8C1FB1A308000CF49D /* SegmentedController.m */; };
 		CAC0FE921FB1A57C000CF49D /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC0FE911FB1A574000CF49D /* UIView+Frame.m */; };
 		CAC0FE951FB1A7CF000CF49D /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC0FE941FB1A7CF000CF49D /* TestViewController.m */; };
+		CAE945AE214B5E8D000D17BE /* TitlePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE945AD214B5E8D000D17BE /* TitlePickerViewController.m */; };
 		CAF555DC1FB1448C00CD57F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF555DB1FB1448C00CD57F9 /* AppDelegate.m */; };
 		CAF555DF1FB1448C00CD57F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF555DE1FB1448C00CD57F9 /* ViewController.m */; };
 		CAF555E21FB1448C00CD57F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF555E01FB1448C00CD57F9 /* Main.storyboard */; };
@@ -161,6 +162,8 @@
 		CAC0FE911FB1A574000CF49D /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		CAC0FE931FB1A7CF000CF49D /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		CAC0FE941FB1A7CF000CF49D /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		CAE945AC214B5E8D000D17BE /* TitlePickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitlePickerViewController.h; sourceTree = "<group>"; };
+		CAE945AD214B5E8D000D17BE /* TitlePickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitlePickerViewController.m; sourceTree = "<group>"; };
 		CAF555D71FB1448C00CD57F9 /* WTCustomUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTCustomUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF555DA1FB1448C00CD57F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CAF555DB1FB1448C00CD57F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -386,6 +389,15 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		CAE945AB214B5E58000D17BE /* TitlePickerViewControll */ = {
+			isa = PBXGroup;
+			children = (
+				CAE945AC214B5E8D000D17BE /* TitlePickerViewController.h */,
+				CAE945AD214B5E8D000D17BE /* TitlePickerViewController.m */,
+			);
+			path = TitlePickerViewControll;
+			sourceTree = "<group>";
+		};
 		CAF555CE1FB1448C00CD57F9 = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +461,7 @@
 		CAF555F21FB14F3C00CD57F9 /* CustomUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				CAE945AB214B5E58000D17BE /* TitlePickerViewControll */,
 				CA7D2D23213E747900BC2640 /* TopSheetViewController */,
 				CA7D2D1C213E70E400BC2640 /* GeneralCell */,
 				CABA35C720AEAACA0020F08F /* ChooseMenuViewController */,
@@ -602,6 +615,7 @@
 				CABA35F520AEAD080020F08F /* NSObject+MJClass.m in Sources */,
 				CABA366620AEAF050020F08F /* MASCompositeConstraint.m in Sources */,
 				CAA1559A1FB195E900FCB984 /* MenuSelectViewController.m in Sources */,
+				CAE945AE214B5E8D000D17BE /* TitlePickerViewController.m in Sources */,
 				CAA1558B1FB1863700FCB984 /* StepperView.m in Sources */,
 				CAF556031FB1500700CD57F9 /* HotelCalendarCell.m in Sources */,
 				CABA35CE20AEABCC0020F08F /* MenuToolBar.m in Sources */,

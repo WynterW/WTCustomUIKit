@@ -17,6 +17,7 @@
 #import "ChooseMenuViewController.h"
 #import "PublicCellListTableViewController.h"
 #import "TopSheetDemoViewController.h"
+#import "TitlePickerViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSArray *dataSource;
@@ -86,6 +87,9 @@
         case 8:
             [self topSheetViewController];
             break;
+        case 9:
+            [self titlePickerView];
+            break;
         default:
             break;
     }
@@ -122,7 +126,7 @@
         _starView = [[StarView alloc]initWithFrame:CGRectMake(0, 0, 200, 25) withTotalStar:5 withTotalPoint:5 starSpace:8];
         _starView.type = StarTypeComment;
         _starView.starAliment = StarAlimentCenter;
-        _starView.commentPoint = 0;
+        _starView.commentPoint = 4.5;
     }
     return _starView;
 }
@@ -188,10 +192,24 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark - 标题选择器
+- (void)titlePickerView {
+    TitlePickerViewController *dataPickView = [[TitlePickerViewController alloc]init];
+    dataPickView.pickerViewHeight = 180.f;
+    dataPickView.titleName = @"";
+    dataPickView.dataAry = self.dataSource;
+    dataPickView.finishBlock = ^(NSString *name, NSInteger index) {
+        NSLog(@"%@", name);
+    };
+    dataPickView.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    dataPickView.modalPresentationStyle = UIModalPresentationCustom;
+    [self presentViewController:dataPickView animated:NO completion:nil];
+}
+
 #pragma mark * init values
 - (NSArray *)dataSource {
     if (!_dataSource) {
-        _dataSource = @[@"酒店日历", @"日期选择框", @"增减控件", @"评星控件", @"右侧弹出选择框", @"分段视图控制器",@"关联菜单选择器",@"公用cell",@"顶部弹出选择器"];
+        _dataSource = @[@"酒店日历", @"日期选择框", @"增减控件", @"评星控件", @"右侧弹出选择框", @"分段视图控制器",@"关联菜单选择器",@"公用cell",@"顶部弹出选择器",@"标题选择器"];
     }
     return _dataSource;
 }

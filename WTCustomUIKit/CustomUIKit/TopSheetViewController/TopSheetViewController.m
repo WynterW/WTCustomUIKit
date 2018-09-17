@@ -66,7 +66,7 @@ static const CGFloat kCellH = 48.f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    WTPublicCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"WTPublicCell" forIndexPath:indexPath];
+    WTPublicCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WTPublicCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.customCellStyle = WTTableViewCellStyleChecked;
     NSString *title = self.dataSource[indexPath.row];

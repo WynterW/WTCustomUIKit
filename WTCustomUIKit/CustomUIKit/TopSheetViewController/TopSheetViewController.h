@@ -26,7 +26,6 @@ typedef void(^TopSheetSelectBlock) (NSInteger selectIndex, NSString *selectTitle
 @property (nonatomic, strong) UIFont *titleFont; /**< 未选中标题字体*/
 @property (nonatomic, strong) UIFont *selectedTitleFont; /**< 选中标题字体*/
 @property (nonatomic, strong) UIImage *selectedIconImage; /**< 选中cell左侧的标记icon*/
-
 @property (nonatomic, assign) BOOL isShowBtnTransform; /**< 展示按钮的icon是否旋转，默认NO，不旋转*/
 
 

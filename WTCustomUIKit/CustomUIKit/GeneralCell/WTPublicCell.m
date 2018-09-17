@@ -102,6 +102,7 @@
     [self.titleLb mas_makeConstraints:^(MASConstraintMaker *make){
         make.left.equalTo(self.leftImgView.mas_right).offset(5);
         make.centerY.equalTo(self.contentView);
+        make.width.lessThanOrEqualTo(self.contentView.mas_width).multipliedBy(0.5);
     }];
     [self.accessoryImgView mas_makeConstraints:^(MASConstraintMaker *make){
         make.right.equalTo(self.contentView).offset(-12);
@@ -110,7 +111,7 @@
     }];
     [self.rightImgView mas_makeConstraints:^(MASConstraintMaker *make){
         if (self.isHiddenAccessory) {
-            make.left.equalTo(self.contentView).offset(-12);
+            make.right.equalTo(self.contentView).offset(-12);
         } else {
             make.right.equalTo(self.accessoryImgView.mas_left).offset(5);
         }
@@ -120,10 +121,11 @@
     
     [self.subtitleLb mas_makeConstraints:^(MASConstraintMaker *make){
         if (self.isHiddenAccessory) {
-            make.left.equalTo(self.contentView).offset(-12);
+            make.right.equalTo(self.contentView).offset(-12);
         } else {
             make.right.equalTo(self.accessoryImgView.mas_left).offset(5);
         }
+        make.left.greaterThanOrEqualTo(self.titleLb.mas_right).with.offset(10);
         make.centerY.equalTo(self.contentView);
     }];
     
@@ -143,6 +145,7 @@
     [self.titleLb mas_makeConstraints:^(MASConstraintMaker *make){
         make.left.equalTo(self.contentView).offset(12);
         make.centerY.equalTo(self.contentView);
+        make.width.lessThanOrEqualTo(self.contentView.mas_width).multipliedBy(0.5);
     }];
     
     [self.accessoryImgView mas_makeConstraints:^(MASConstraintMaker *make){
@@ -153,10 +156,11 @@
     
     [self.subtitleLb mas_makeConstraints:^(MASConstraintMaker *make){
         if (self.isHiddenAccessory) {
-            make.left.equalTo(self.contentView).offset(-12);
+            make.right.equalTo(self.contentView).offset(-12);
         } else {
             make.right.equalTo(self.accessoryImgView.mas_left).offset(5);
         }
+        make.left.greaterThanOrEqualTo(self.titleLb.mas_right).with.offset(10);
         make.centerY.equalTo(self.contentView);
     }];
     
@@ -237,6 +241,7 @@
     if (!_accessoryImgView) {
         _accessoryImgView = [[UIImageView alloc]init];
         _accessoryImgView.image = [UIImage imageNamed:@"cell_right_Indicator"];
+
     }
     return _accessoryImgView;
 }

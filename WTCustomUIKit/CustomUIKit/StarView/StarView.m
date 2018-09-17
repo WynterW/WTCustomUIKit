@@ -69,7 +69,7 @@
     for (int i = 0; i < totalStar; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * starHeight + i * spaceWidth, self.frame.size.height - starHeight, starHeight, starHeight)];
         imageView.tag = starBaseTag + i;
-        imageView.image = [UIImage imageNamed:@"comments_star_gray"];
+        imageView.image = self.unselectedImage?self.unselectedImage:[UIImage imageNamed:@"comments_star_gray"];
         [self addSubview:imageView];
     }
 }
@@ -118,7 +118,7 @@
     //在长图上填充完整的星星
     for (int j = 0; j < fullNumber; j++) {
         UIImageView *starImageView = [[UIImageView alloc] init];
-        starImageView.image = [UIImage imageNamed:@"comments_star_green"];
+        starImageView.image = self.selectedImage?self.selectedImage:[UIImage imageNamed:@"comments_star_green"];
         starImageView.frame = CGRectMake(j * starHeight + j * spaceWidth, 0, starHeight, starHeight);
         [foregroundStarView addSubview:starImageView];
     }
@@ -127,7 +127,7 @@
     //如果有残缺的星星 则添加
     if (part > 0) {
         UIImageView *partImage = [[UIImageView alloc] initWithFrame:CGRectMake(fullNumber * starHeight + fullNumber * spaceWidth, 0, starHeight, starHeight)];
-        partImage.image = [UIImage imageNamed:@"comments_star_green"];
+        partImage.image = self.selectedImage?self.selectedImage:[UIImage imageNamed:@"comments_star_green"];
         [foregroundStarView addSubview:partImage];
     }
 
@@ -208,6 +208,14 @@
     
     UIImageView *starImageView = (UIImageView*)[self viewWithTag:starBaseTag];
     self.commentPoint = round((frame.origin.x - starImageView.frame.origin.x + starHeight) / (starHeight+spaceWidth));
+}
+
+- (void)setUnselectedImage:(UIImage *)unselectedImage {
+    _unselectedImage = unselectedImage;
+    for (int i = 0; i < totalNumber; i++) {
+        UIImageView *imageView = [self viewWithTag:starBaseTag + i];
+        imageView.image = self.unselectedImage?self.unselectedImage:[UIImage imageNamed:@"comments_star_gray"];
+    }
 }
 
 @end

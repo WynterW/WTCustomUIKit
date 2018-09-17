@@ -45,7 +45,7 @@ static const CGFloat kToolBarH = 44.f;
 
 #pragma mark - private methods
 - (void)setupView {
-    _datePickerBgView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.frame), CGRectGetWidth(self.view.frame), kToolBarH + kDatePickerViewH)];
+    _datePickerBgView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.frame), CGRectGetWidth(self.view.frame), [self pickerBgViewHeight])];
     _datePickerBgView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_datePickerBgView];
     
@@ -69,15 +69,15 @@ static const CGFloat kToolBarH = 44.f;
 - (void)show {
     [UIView animateWithDuration:0.5
                      animations:^{
-                         CGFloat calendarViewY = (CGRectGetHeight(self.view.frame) - kDatePickerViewH - kToolBarH);
-                         self.datePickerBgView.frame = CGRectMake(0, calendarViewY, CGRectGetWidth(self.view.frame), kDatePickerViewH + kToolBarH);
+                         CGFloat calendarViewY = (CGRectGetHeight(self.view.frame) - [self pickerBgViewHeight]);
+                         self.datePickerBgView.frame = CGRectMake(0, calendarViewY, CGRectGetWidth(self.view.frame), [self pickerBgViewHeight]);
                      }];
 }
 
 - (void)dissmiss {
     [UIView animateWithDuration:0.5
                      animations:^{
-                         self.datePickerBgView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame), CGRectGetWidth(self.view.frame), kDatePickerViewH + kToolBarH);
+                         self.datePickerBgView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame), CGRectGetWidth(self.view.frame), [self pickerBgViewHeight]);
                      }
                      completion:^(BOOL finished) {
                          [self dismissViewControllerAnimated:NO completion:nil];
@@ -87,7 +87,7 @@ static const CGFloat kToolBarH = 44.f;
 #pragma mark - getters and  setters
 - (UIDatePicker *)datePickerView {
     if (!_datePickerView) {
-        UIDatePicker *datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, kToolBarH, CGRectGetWidth(self.view.frame), kDatePickerViewH)];
+        UIDatePicker *datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, kToolBarH, CGRectGetWidth(self.view.frame), [self pickerViewH])];
         [datePickerView setLocale:[NSLocale currentLocale]];
         [datePickerView setMinimumDate:self.minDate];
         [datePickerView setMaximumDate:self.maxDate];
@@ -134,12 +134,27 @@ static const CGFloat kToolBarH = 44.f;
     }
 }
 
+- (void)setPickerViewHeight:(CGFloat)pickerViewHeight {
+    _pickerViewHeight = pickerViewHeight;
+    CGRect frame = self.datePickerView.frame;
+    frame.size.height = pickerViewHeight;
+    self.datePickerView.frame = frame;
+}
+
 #pragma mark - life cycle
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch *touche = [touches anyObject];
     if ([touche.view isEqual:self.view]) {
         [self dissmiss];
     }
+}
+
+- (CGFloat)pickerBgViewHeight {
+    return kToolBarH + [self pickerViewH];
+}
+
+- (CGFloat)pickerViewH {
+    return self.pickerViewHeight > 0 ? self.pickerViewHeight: kDatePickerViewH;
 }
 
 @end

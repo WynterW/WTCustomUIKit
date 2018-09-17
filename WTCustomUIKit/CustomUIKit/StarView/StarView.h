@@ -24,6 +24,8 @@ typedef NS_ENUM(NSInteger, StarType) {
 @property (nonatomic,assign) CGFloat commentPoint; /**< 评分*/
 @property (nonatomic,assign) StarAliment starAliment; /**< 对齐方式*/
 @property (nonatomic,assign) StarType type; /**< 评分类型*/
+@property (nonatomic, strong) UIImage *selectedImage;
+@property (nonatomic, strong) UIImage *unselectedImage;
 
 /**
  *  初始化方法

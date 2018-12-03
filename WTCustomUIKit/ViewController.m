@@ -18,6 +18,7 @@
 #import "PublicCellListTableViewController.h"
 #import "TopSheetDemoViewController.h"
 #import "TitlePickerViewController.h"
+#import "WTFeatureGuideViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSArray *dataSource;
@@ -89,6 +90,9 @@
             break;
         case 9:
             [self titlePickerView];
+            break;
+        case 10:
+            [self featureGuideView];
             break;
         default:
             break;
@@ -206,10 +210,31 @@
     [self presentViewController:dataPickView animated:NO completion:nil];
 }
 
+#pragma mark - 新功能引导
+- (void)featureGuideView {
+    BOOL finish = [[NSUserDefaults standardUserDefaults] boolForKey:@"需要新功能引导的版本号"];
+    if (!finish) {
+        WTFeatureGuideViewController *vc = [[WTFeatureGuideViewController alloc]init];
+        vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        vc.modalPresentationStyle = UIModalPresentationCustom;
+        vc.markStyle = WTMarkStyleRect;
+        vc.msgImageNames = @[@"home_guide_guahao",@"home_guide_daozhen",@"home_guide_hospital",@"home_guide_doctor"];
+        vc.guideContentFrames = @[[NSValue valueWithCGRect:CGRectMake(20, 600, 100, 70)],[NSValue valueWithCGRect:CGRectMake(66, 260, 200, 100)],[NSValue valueWithCGRect:CGRectMake(100, 180, 300, 120)],[NSValue valueWithCGRect:CGRectMake(200, 300, 150, 100)]];
+        if (vc.markStyle == WTMarkStyleRound) {
+            vc.roundRadius = @[@10, @20 , @30 , @40];
+        }
+        [self presentViewController:vc animated:YES completion:nil];
+        
+        // 正式开发不需要注释下面两行代码
+        // [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"需要新功能引导的版本号"];
+        // [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
 #pragma mark * init values
 - (NSArray *)dataSource {
     if (!_dataSource) {
-        _dataSource = @[@"酒店日历", @"日期选择框", @"增减控件", @"评星控件", @"右侧弹出选择框", @"分段视图控制器",@"关联菜单选择器",@"公用cell",@"顶部弹出选择器",@"标题选择器"];
+        _dataSource = @[@"酒店日历", @"日期选择框", @"增减控件", @"评星控件", @"右侧弹出选择框", @"分段视图控制器",@"关联菜单选择器",@"公用cell",@"顶部弹出选择器",@"标题选择器",@"新功能引导"];
     }
     return _dataSource;
 }

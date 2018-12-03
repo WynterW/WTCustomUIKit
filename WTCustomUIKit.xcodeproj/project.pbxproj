@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA2C317321B5158500F78F79 /* WTFeatureGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2C317121B5158500F78F79 /* WTFeatureGuideViewController.m */; };
 		CA4D01261FD7DB6D00CAA5CF /* UIButton+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4D01251FD7DB6D00CAA5CF /* UIButton+Event.m */; };
 		CA7D2D1F213E720E00BC2640 /* WTPublicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7D2D1E213E720E00BC2640 /* WTPublicCell.m */; };
 		CA7D2D22213E746A00BC2640 /* TopSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7D2D21213E746A00BC2640 /* TopSheetViewController.m */; };
@@ -72,6 +73,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA2C317121B5158500F78F79 /* WTFeatureGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFeatureGuideViewController.m; sourceTree = "<group>"; };
+		CA2C317221B5158500F78F79 /* WTFeatureGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFeatureGuideViewController.h; sourceTree = "<group>"; };
 		CA4D01241FD7DB6D00CAA5CF /* UIButton+Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Event.h"; sourceTree = "<group>"; };
 		CA4D01251FD7DB6D00CAA5CF /* UIButton+Event.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Event.m"; sourceTree = "<group>"; };
 		CA7D2D1D213E720E00BC2640 /* WTPublicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTPublicCell.h; sourceTree = "<group>"; };
@@ -203,6 +206,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA2C316E21B5150700F78F79 /* FeatureGuide */ = {
+			isa = PBXGroup;
+			children = (
+				CA2C317221B5158500F78F79 /* WTFeatureGuideViewController.h */,
+				CA2C317121B5158500F78F79 /* WTFeatureGuideViewController.m */,
+			);
+			path = FeatureGuide;
+			sourceTree = "<group>";
+		};
 		CA4D01231FD7DB4300CAA5CF /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +473,7 @@
 		CAF555F21FB14F3C00CD57F9 /* CustomUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				CA2C316E21B5150700F78F79 /* FeatureGuide */,
 				CAE945AB214B5E58000D17BE /* TitlePickerViewControll */,
 				CA7D2D23213E747900BC2640 /* TopSheetViewController */,
 				CA7D2D1C213E70E400BC2640 /* GeneralCell */,
@@ -641,6 +654,7 @@
 				CABA366820AEAF050020F08F /* MASLayoutConstraint.m in Sources */,
 				CABA35F320AEAD080020F08F /* MJExtensionConst.m in Sources */,
 				CAF556061FB1500700CD57F9 /* HotelCalendarCollectionViewFlowLayout.m in Sources */,
+				CA2C317321B5158500F78F79 /* WTFeatureGuideViewController.m in Sources */,
 				CABA366A20AEAF050020F08F /* View+MASAdditions.m in Sources */,
 				CABA35F120AEAD080020F08F /* MJProperty.m in Sources */,
 				CABA366720AEAF050020F08F /* MASConstraintMaker.m in Sources */,

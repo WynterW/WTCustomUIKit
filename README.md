@@ -2,6 +2,8 @@
 
 WTCustomUIKit是一个日常开发积累下来的自定义UI控件的项目。
 
+![demo]()
+
 ## 酒店日历组件
 
 ```obj
@@ -127,6 +129,71 @@ cell.accessoryView = self.starView;
     childVc2.title = @"子视图2";
     vc.childViewControllerAry = @[childVc1, childVc2];
     [self.navigationController pushViewController:vc animated:YES];
+```
+
+## 关联菜单选择器
+
+```obj
+ChooseMenuViewController *vc = [[ChooseMenuViewController alloc] init];
+vc.modalPresentationStyle = UIModalPresentationCustom;
+vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+vc.type = CompanySelectTypeIndustry;
+vc.chooseFinish = ^(CompanySelectType type, NSArray<CompanySelectTypeItem *> *selectedAry) {
+    NSLog(@"%@", selectedAry);
+};
+[self presentViewController:vc animated:NO completion:nil];
+```
+
+## 公用cell
+
+```obj
+PublicCellListTableViewController *vc = [[PublicCellListTableViewController alloc]init];
+vc.title = @"公用cell示例";
+[self.navigationController pushViewController:vc animated:YES];
+```
+
+## 公用cell
+
+```obj
+TopSheetDemoViewController *vc = [[TopSheetDemoViewController alloc]init];
+vc.title = @"顶部弹出选择";
+[self.navigationController pushViewController:vc animated:YES];
+```
+
+## 标题选择器
+
+```obj
+TitlePickerViewController *dataPickView = [[TitlePickerViewController alloc]init];
+dataPickView.pickerViewHeight = 180.f;
+dataPickView.titleName = @"";
+dataPickView.dataAry = self.dataSource;
+dataPickView.finishBlock = ^(NSString *name, NSInteger index) {
+    NSLog(@"%@", name);
+};
+dataPickView.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+dataPickView.modalPresentationStyle = UIModalPresentationCustom;
+[self presentViewController:dataPickView animated:NO completion:nil];
+```
+## 新功能引导
+
+```obj
+BOOL finish = [[NSUserDefaults standardUserDefaults] boolForKey:@"需要新功能引导的版本号"];
+if (!finish) {
+    WTFeatureGuideViewController *vc = [[WTFeatureGuideViewController alloc]init];
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    vc.modalPresentationStyle = UIModalPresentationCustom;
+    vc.markStyle = WTMarkStyleRect;
+    vc.msgImageNames = @[@"home_guide_guahao",@"home_guide_daozhen",@"home_guide_hospital",@"home_guide_doctor"];
+    vc.guideContentFrames = @[[NSValue valueWithCGRect:CGRectMake(20, 600, 100, 70)],[NSValue valueWithCGRect:CGRectMake(66, 260, 200, 100)],[NSValue valueWithCGRect:CGRectMake(100, 180, 300, 120)],[NSValue valueWithCGRect:CGRectMake(200, 300, 150, 100)]];
+    if (vc.markStyle == WTMarkStyleRound) {
+        vc.roundRadius = @[@10, @20 , @30 , @40];
+    }
+    [self presentViewController:vc animated:YES completion:nil];
+    
+    // 正式开发不需要注释下面两行代码
+    // [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"需要新功能引导的版本号"];
+    // [[NSUserDefaults standardUserDefaults] synchronize];
+}
 ```
 
 

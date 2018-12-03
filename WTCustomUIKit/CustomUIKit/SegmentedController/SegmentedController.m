@@ -33,7 +33,7 @@
 #pragma mark - 初始化主视图
 - (void)initMianView {
 
-    _tabarView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.frame), 45)];
+    _tabarView = [[UIView alloc] initWithFrame:CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.frame.size.height, CGRectGetWidth(self.view.frame), 45)];
     _tabarView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_tabarView];
 

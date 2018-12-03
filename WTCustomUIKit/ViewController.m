@@ -192,7 +192,7 @@
 #pragma mark - 顶部弹出选择
 - (void)topSheetViewController {
     TopSheetDemoViewController *vc = [[TopSheetDemoViewController alloc]init];
-    vc.title = @"公用cell示例";
+    vc.title = @"顶部弹出选择";
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -217,7 +217,7 @@
         WTFeatureGuideViewController *vc = [[WTFeatureGuideViewController alloc]init];
         vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         vc.modalPresentationStyle = UIModalPresentationCustom;
-        vc.markStyle = WTMarkStyleRect;
+        vc.markStyle = WTMarkStyleOval;
         vc.msgImageNames = @[@"home_guide_guahao",@"home_guide_daozhen",@"home_guide_hospital",@"home_guide_doctor"];
         vc.guideContentFrames = @[[NSValue valueWithCGRect:CGRectMake(20, 600, 100, 70)],[NSValue valueWithCGRect:CGRectMake(66, 260, 200, 100)],[NSValue valueWithCGRect:CGRectMake(100, 180, 300, 120)],[NSValue valueWithCGRect:CGRectMake(200, 300, 150, 100)]];
         if (vc.markStyle == WTMarkStyleRound) {

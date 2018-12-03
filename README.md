@@ -2,7 +2,7 @@
 
 WTCustomUIKit是一个日常开发积累下来的自定义UI控件的项目。
 
-![demo]()
+![demo](https://github.com/WynterW/WTCustomUIKit/blob/master/WTCustomUIKit.gif)
 
 ## 酒店日历组件
 

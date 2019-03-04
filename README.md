@@ -6,7 +6,7 @@ WTCustomUIKit是一个日常开发积累下来的自定义UI控件的项目。
 
 ## 酒店日历组件
 
-```obj
+```objc
 #pragma mark - private instance method
 - (void)initCalendarViews {
     HotelCalendarViewController *vc = [[HotelCalendarViewController alloc]init];
@@ -55,7 +55,7 @@ WTCustomUIKit是一个日常开发积累下来的自定义UI控件的项目。
 ```
 
 ## 日期时间选择框
-```obj
+```objc
    DatePickerViewController *vc = [[DatePickerViewController alloc]init];
     vc.datePickerMode = UIDatePickerModeDate;
     vc.titleName = @"请选择日期";
@@ -66,7 +66,7 @@ WTCustomUIKit是一个日常开发积累下来的自定义UI控件的项目。
 ```
 
 ## 增减控件
-```obj
+```objc
 @property (nonatomic, strong) StepperView *accessoryView;
 
 cell.accessoryView = self.accessoryView;
@@ -83,7 +83,7 @@ cell.accessoryView = self.accessoryView;
 ```
 
 ## 评星控件
-```obj
+```objc
 @property (nonatomic, strong) StarView *starView;
 cell.accessoryView = self.starView;
 - (StarView *)starView {
@@ -98,7 +98,7 @@ cell.accessoryView = self.starView;
 ```
 
 ## 右侧弹出选择框
-```obj
+```objc
     NSMutableArray *_selectListItems = [NSMutableArray arrayWithCapacity:0];
     NSArray * images = @[@"more_msg", @"more_share"];
     NSArray * titles = @[@"消息", @"分享"];
@@ -120,7 +120,7 @@ cell.accessoryView = self.starView;
 ```
 
 ## 分段视图控制器
-```obj
+```objc
   SegmentedController *vc = [[SegmentedController alloc]init];
     vc.title = @"分段视图控制器";
     TestViewController *childVc1 = [[TestViewController alloc]init];
@@ -133,7 +133,7 @@ cell.accessoryView = self.starView;
 
 ## 关联菜单选择器
 
-```obj
+```objc
 ChooseMenuViewController *vc = [[ChooseMenuViewController alloc] init];
 vc.modalPresentationStyle = UIModalPresentationCustom;
 vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
@@ -146,7 +146,7 @@ vc.chooseFinish = ^(CompanySelectType type, NSArray<CompanySelectTypeItem *> *se
 
 ## 公用cell
 
-```obj
+```objc
 PublicCellListTableViewController *vc = [[PublicCellListTableViewController alloc]init];
 vc.title = @"公用cell示例";
 [self.navigationController pushViewController:vc animated:YES];
@@ -154,7 +154,7 @@ vc.title = @"公用cell示例";
 
 ## 公用cell
 
-```obj
+```objc
 TopSheetDemoViewController *vc = [[TopSheetDemoViewController alloc]init];
 vc.title = @"顶部弹出选择";
 [self.navigationController pushViewController:vc animated:YES];
@@ -162,7 +162,7 @@ vc.title = @"顶部弹出选择";
 
 ## 标题选择器
 
-```obj
+```objc
 TitlePickerViewController *dataPickView = [[TitlePickerViewController alloc]init];
 dataPickView.pickerViewHeight = 180.f;
 dataPickView.titleName = @"";
@@ -176,7 +176,7 @@ dataPickView.modalPresentationStyle = UIModalPresentationCustom;
 ```
 ## 新功能引导
 
-```obj
+```objc
 BOOL finish = [[NSUserDefaults standardUserDefaults] boolForKey:@"需要新功能引导的版本号"];
 if (!finish) {
     WTFeatureGuideViewController *vc = [[WTFeatureGuideViewController alloc]init];

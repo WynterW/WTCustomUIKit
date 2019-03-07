@@ -12,9 +12,10 @@ typedef void (^finishBlock)(NSString *name, NSInteger index);
 
 @interface TitlePickerViewController : UIViewController
 
-@property (strong, nonatomic) NSString *titleName; /**< 标题名字*/
+@property (strong, nonatomic) NSString *titleName; /**< toolView标题名字*/
 @property (nonatomic, copy) NSArray <NSString *>*dataAry;
 @property (copy, nonatomic) finishBlock finishBlock; /**< block返回最终值*/
+@property (nonatomic, strong) NSString *selectedName; /**< 选中内容，设置后直接滚动到选中标题*/
 
 @property (nonatomic, assign) CGFloat pickerViewHeight; /**< 选择器高度，默认160*/
 

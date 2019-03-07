@@ -97,6 +97,10 @@ static const CGFloat kToolBarH = 44.f;
     self.titleLb.center = _toolbar.center;
     [_toolbar addSubview:self.titleLb];
     [_dataPickerBgView addSubview:self.dataPickerView];
+    
+    if (self.selectedName && [self.dataAry containsObject:self.selectedName]) {
+        [self.dataPickerView selectRow:[self.dataAry indexOfObject:self.selectedName] inComponent:0 animated:NO];
+    }
 }
 
 - (void)show {
@@ -148,6 +152,14 @@ static const CGFloat kToolBarH = 44.f;
     if (titleName) {
         self.titleLb.text = titleName;
         [self.titleLb sizeToFit];
+    }
+}
+
+- (void)setSelectedName:(NSString *)selectedName {
+    _selectedName = selectedName;
+    
+    if (_selectedName && [_dataAry containsObject:_selectedName]) {
+        [_dataPickerView selectRow:[_dataAry indexOfObject:_selectedName] inComponent:0 animated:NO];
     }
 }
 

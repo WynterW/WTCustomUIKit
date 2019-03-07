@@ -150,18 +150,18 @@
 #pragma mark - MenuSelectViewController
 - (void)menuSelectView {
     
-    NSMutableArray *_selectListItems = [NSMutableArray arrayWithCapacity:0];
-    NSArray * images = @[@"more_msg", @"more_share"];
-    NSArray * titles = @[@"消息", @"分享"];
-    
+    NSMutableArray *selectListItems = [NSMutableArray arrayWithCapacity:0];
+    NSArray *images = @[@"more_msg", @"more_share"];
+    NSArray *titles = @[@"消息", @"分享"];
+
     [titles enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        MenuSelectItem * item = [[MenuSelectItem alloc] init];
+        MenuSelectItem *item = [[MenuSelectItem alloc] init];
         item.iconImage = images[idx];
         item.title = titles[idx];
-        [_selectListItems addObject:item];
+        [selectListItems addObject:item];
     }];
-    
-    MenuSelectViewController *_selectListVC = [[MenuSelectViewController alloc] initWithItems:_selectListItems];
+
+    MenuSelectViewController *_selectListVC = [[MenuSelectViewController alloc] initWithItems:selectListItems];
     _selectListVC.alphaComponent        = 0.0;
     _selectListVC.showListViewControl   = self;
     _selectListVC.clickBlock = ^(NSInteger selectIndex) {

@@ -56,79 +56,66 @@ WTCustomUIKit是一个日常开发积累下来的自定义UI控件的项目。
 
 ## 日期时间选择框
 ```objc
-   DatePickerViewController *vc = [[DatePickerViewController alloc]init];
-    vc.datePickerMode = UIDatePickerModeDate;
-    vc.titleName = @"请选择日期";
-    vc.dateBlock = ^(NSDate *date) {
-        NSLog(@"%@", date);
-    };
-    [self presentViewController:vc animated:NO completion:nil];
+DatePickerViewController *vc = [[DatePickerViewController alloc]init];
+vc.datePickerMode = UIDatePickerModeDate;
+vc.titleName = @"请选择日期";
+vc.dateBlock = ^(NSDate *date) {
+    NSLog(@"%@", date);
+};
+[self presentViewController:vc animated:NO completion:nil];
 ```
 
 ## 增减控件
 ```objc
-@property (nonatomic, strong) StepperView *accessoryView;
-
-cell.accessoryView = self.accessoryView;
-
-- (StarView *)starView {
-    if (!_starView) {
-        _starView = [[StarView alloc]initWithFrame:CGRectMake(0, 0, 200, 25) withTotalStar:5 withTotalPoint:5 starSpace:8];
-        _starView.type = StarTypeComment;
-        _starView.starAliment = StarAlimentCenter;
-        _starView.commentPoint = 0;
-    }
-    return _starView;
-}
+StepperView *stepperView  = [[StepperView alloc]initWithFrame:CGRectMake(0, 0, 100, 44)];
+stepperView.backgroundColor = [UIColor clearColor];
+stepperView.valueBlock = ^(NSInteger value) {
+    NSLog(@"StepperView value is %ld", value);
+};
+[self.view addSubview:stepperView];
 ```
 
 ## 评星控件
 ```objc
-@property (nonatomic, strong) StarView *starView;
-cell.accessoryView = self.starView;
-- (StarView *)starView {
-    if (!_starView) {
-        _starView = [[StarView alloc]initWithFrame:CGRectMake(0, 0, 200, 25) withTotalStar:5 withTotalPoint:5 starSpace:8];
-        _starView.type = StarTypeComment;
-        _starView.starAliment = StarAlimentCenter;
-        _starView.commentPoint = 0;
-    }
-    return _starView;
-}
+StarView *starView = [[StarView alloc]initWithFrame:CGRectMake(0, 0, 200, 25) withTotalStar:5 withTotalPoint:5 starSpace:8];
+starView.type = StarTypeComment;
+starView.starAliment = StarAlimentCenter;
+starView.commentPoint = 4.5;
+[self.view addSubview:starView];
 ```
 
 ## 右侧弹出选择框
 ```objc
-    NSMutableArray *_selectListItems = [NSMutableArray arrayWithCapacity:0];
-    NSArray * images = @[@"more_msg", @"more_share"];
-    NSArray * titles = @[@"消息", @"分享"];
-    
-    [titles enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        MenuSelectItem * item = [[MenuSelectItem alloc] init];
-        item.iconImage = images[idx];
-        item.title = titles[idx];
-        [_selectListItems addObject:item];
-    }];
-    
-    MenuSelectViewController *_selectListVC = [[MenuSelectViewController alloc] initWithItems:_selectListItems];
-    _selectListVC.alphaComponent        = 0.0;
-    _selectListVC.showListViewControl   = self;
-    _selectListVC.clickBlock = ^(NSInteger selectIndex) {
-        NSLog(@"%zi", selectIndex);
-    };
-    [_selectListVC show]; 
+NSMutableArray *selectListItems = [NSMutableArray arrayWithCapacity:0];
+NSArray *images = @[@"more_msg", @"more_share"];
+NSArray *titles = @[@"消息", @"分享"];
+
+[titles enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    MenuSelectItem *item = [[MenuSelectItem alloc] init];
+    item.iconImage = images[idx];
+    item.title = titles[idx];
+    [selectListItems addObject:item];
+}];
+
+MenuSelectViewController *_selectListVC = [[MenuSelectViewController alloc] initWithItems:selectListItems];
+_selectListVC.alphaComponent        = 0.0;
+_selectListVC.showListViewControl   = self;
+_selectListVC.clickBlock = ^(NSInteger selectIndex) {
+    NSLog(@"%zi", selectIndex);
+};
+[_selectListVC show];
 ```
 
 ## 分段视图控制器
 ```objc
-  SegmentedController *vc = [[SegmentedController alloc]init];
-    vc.title = @"分段视图控制器";
-    TestViewController *childVc1 = [[TestViewController alloc]init];
-    TestViewController *childVc2 = [[TestViewController alloc]init];
-    childVc1.title = @"子视图1";
-    childVc2.title = @"子视图2";
-    vc.childViewControllerAry = @[childVc1, childVc2];
-    [self.navigationController pushViewController:vc animated:YES];
+SegmentedController *vc = [[SegmentedController alloc]init];
+vc.title = @"分段视图控制器";
+TestViewController *childVc1 = [[TestViewController alloc]init];
+TestViewController *childVc2 = [[TestViewController alloc]init];
+childVc1.title = @"子视图1";
+childVc2.title = @"子视图2";
+vc.childViewControllerAry = @[childVc1, childVc2];
+[self.navigationController pushViewController:vc animated:YES];
 ```
 
 ## 关联菜单选择器
@@ -147,12 +134,23 @@ vc.chooseFinish = ^(CompanySelectType type, NSArray<CompanySelectTypeItem *> *se
 ## 公用cell
 
 ```objc
-PublicCellListTableViewController *vc = [[PublicCellListTableViewController alloc]init];
-vc.title = @"公用cell示例";
-[self.navigationController pushViewController:vc animated:YES];
+typedef NS_ENUM(NSInteger, WTTableViewCellStyle) {
+    WTTableViewCellStyleDefault, // 左边一张图，一个标题
+    WTTableViewCellStyleCenterText, // 文本垂直水平居中
+    WTTableViewCellStyleChecked, // 左边一个标题，右边一张图片（选中效果）
+    WTTableViewCellStyleValue1, // 左边一张图 一个主题，右边一张图(默认隐藏),一个副标题(默认隐藏)
+    WTTableViewCellStyleValue2, // 左边一个主题，右边一个副标题
+};
+
+WTPublicCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WTPublicCell" forIndexPath:indexPath];
+cell.customCellStyle = WTTableViewCellStyleDefault;
+cell.leftImgView.image = [UIImage imageNamed:@"comments_star_green"];
+cell.titleLb.text = @"Default";
+cell.bottomLineLb.hidden = NO;
+return cell;
 ```
 
-## 公用cell
+## 顶部筛选条件控制器
 
 ```objc
 TopSheetDemoViewController *vc = [[TopSheetDemoViewController alloc]init];

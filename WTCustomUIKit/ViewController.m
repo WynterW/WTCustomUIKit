@@ -19,6 +19,7 @@
 #import "TopSheetDemoViewController.h"
 #import "TitlePickerViewController.h"
 #import "WTFeatureGuideViewController.h"
+#import "BuoyView.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSArray *dataSource;
@@ -32,6 +33,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.tableFooterView = [UIView new];
+    
+    if (@available(iOS 11.0,*)) {
+        [self.tableView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
@@ -53,8 +60,7 @@
     } else if ([cell.textLabel.text isEqualToString:@"评星控件"]) {
         cell.accessoryView = self.starView;
     }
-    
-    
+
     return cell;
 }
 
@@ -93,6 +99,9 @@
             break;
         case 10:
             [self featureGuideView];
+            break;
+        case 11:
+            [self buoyView];
             break;
         default:
             break;
@@ -231,10 +240,27 @@
     }
 }
 
+- (void)buoyView {
+    BuoyView *view = [[BuoyView alloc] initWithFrame:CGRectMake(0, 200, 55, 55)];
+    view.image = [UIImage imageNamed:@"details_comments"];;
+    view.clickViewBlock = ^{
+        NSLog(@"点击了按钮");
+    };
+    // 加载的view上
+    [self.view addSubview:view];
+    
+    // 加载到view并隐藏nav
+    // self.navigationController.navigationBarHidden = YES;
+    // [self.view addSubview:view];
+    
+    // 加载在windows上
+    // [[UIApplication sharedApplication].keyWindow addSubview:view];
+}
+
 #pragma mark * init values
 - (NSArray *)dataSource {
     if (!_dataSource) {
-        _dataSource = @[@"酒店日历", @"日期选择框", @"增减控件", @"评星控件", @"右侧弹出选择框", @"分段视图控制器",@"关联菜单选择器",@"公用cell",@"顶部弹出选择器",@"标题选择器",@"新功能引导"];
+        _dataSource = @[@"酒店日历", @"日期选择框", @"增减控件", @"评星控件", @"右侧弹出选择框", @"分段视图控制器",@"关联菜单选择器",@"公用cell",@"顶部弹出选择器",@"标题选择器",@"新功能引导",@"可拖动浮标"];
     }
     return _dataSource;
 }

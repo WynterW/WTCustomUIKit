@@ -194,4 +194,17 @@ if (!finish) {
 }
 ```
 
+## 可拖动浮标
+
+适配iPhone X，也可以加载Windows上
+
+```objc
+BuoyView *view = [[BuoyView alloc] initWithFrame:CGRectMake(0, 200, 55, 55)];
+view.image = [UIImage imageNamed:@"details_comments"];;
+view.clickViewBlock = ^{
+    NSLog(@"点击了按钮");
+};
+[self.view addSubview:view];
+```
+
 

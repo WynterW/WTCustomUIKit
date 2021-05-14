@@ -20,6 +20,7 @@
 #import "TitlePickerViewController.h"
 #import "WTFeatureGuideViewController.h"
 #import "BuoyView.h"
+#import "WTCustomAlertView.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSArray *dataSource;
@@ -102,6 +103,9 @@
             break;
         case 11:
             [self buoyView];
+            break;
+        case 12:
+            [self customAlertView];
             break;
         default:
             break;
@@ -257,10 +261,34 @@
     // [[UIApplication sharedApplication].keyWindow addSubview:view];
 }
 
+- (void)customAlertView {
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    style.lineSpacing = 6;
+    NSDictionary *attr = @{
+        NSFontAttributeName: [UIFont systemFontOfSize:14],
+        NSParagraphStyleAttributeName: style,
+        NSForegroundColorAttributeName: [UIColor redColor]
+    };
+    NSAttributedString *attStr = [[NSAttributedString alloc] initWithString:@"这是message。支持多行" attributes:attr];
+    
+    WTCustomAlertView *alert = [WTCustomAlertView alertWithTitle:@"提示" message:@"只有确认按钮, 点击确定查看其它样式" style:WTAlertStyleOnlySure];
+    alert.sureCallback = ^{
+        WTCustomAlertView *alert2 = [WTCustomAlertView alertWithAttTitle:attStr attMessage:[WTCustomAlertView attStringWithString:@"这是message。支持多行"] style:WTAlertStyleTwoBtn];
+        alert2.sureCallback = ^{
+            
+        };
+        alert2.cancelCallback = ^{
+            NSLog(@"点击了取消");
+        };
+        [alert2 show];
+    };
+    [alert show];
+}
+
 #pragma mark * init values
 - (NSArray *)dataSource {
     if (!_dataSource) {
-        _dataSource = @[@"酒店日历", @"日期选择框", @"增减控件", @"评星控件", @"右侧弹出选择框", @"分段视图控制器",@"关联菜单选择器",@"公用cell",@"顶部弹出选择器",@"标题选择器",@"新功能引导",@"可拖动浮标"];
+        _dataSource = @[@"酒店日历", @"日期选择框", @"增减控件", @"评星控件", @"右侧弹出选择框", @"分段视图控制器",@"关联菜单选择器",@"公用cell",@"顶部弹出选择器",@"标题选择器",@"新功能引导",@"可拖动浮标",@"自定义系统弹框样式"];
     }
     return _dataSource;
 }

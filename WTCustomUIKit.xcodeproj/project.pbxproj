@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CA2C317321B5158500F78F79 /* WTFeatureGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2C317121B5158500F78F79 /* WTFeatureGuideViewController.m */; };
+		CA3A5C75264E09B30079C0F2 /* WTCustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3A5C74264E09B30079C0F2 /* WTCustomAlertView.m */; };
 		CA4D01261FD7DB6D00CAA5CF /* UIButton+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4D01251FD7DB6D00CAA5CF /* UIButton+Event.m */; };
 		CA7D2D1F213E720E00BC2640 /* WTPublicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7D2D1E213E720E00BC2640 /* WTPublicCell.m */; };
 		CA7D2D22213E746A00BC2640 /* TopSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7D2D21213E746A00BC2640 /* TopSheetViewController.m */; };
@@ -76,6 +77,8 @@
 /* Begin PBXFileReference section */
 		CA2C317121B5158500F78F79 /* WTFeatureGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFeatureGuideViewController.m; sourceTree = "<group>"; };
 		CA2C317221B5158500F78F79 /* WTFeatureGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFeatureGuideViewController.h; sourceTree = "<group>"; };
+		CA3A5C73264E09B30079C0F2 /* WTCustomAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTCustomAlertView.h; sourceTree = "<group>"; };
+		CA3A5C74264E09B30079C0F2 /* WTCustomAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTCustomAlertView.m; sourceTree = "<group>"; };
 		CA4D01241FD7DB6D00CAA5CF /* UIButton+Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Event.h"; sourceTree = "<group>"; };
 		CA4D01251FD7DB6D00CAA5CF /* UIButton+Event.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Event.m"; sourceTree = "<group>"; };
 		CA7D2D1D213E720E00BC2640 /* WTPublicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTPublicCell.h; sourceTree = "<group>"; };
@@ -216,6 +219,15 @@
 				CA2C317121B5158500F78F79 /* WTFeatureGuideViewController.m */,
 			);
 			path = FeatureGuide;
+			sourceTree = "<group>";
+		};
+		CA3A5C72264E09590079C0F2 /* CustomAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				CA3A5C73264E09B30079C0F2 /* WTCustomAlertView.h */,
+				CA3A5C74264E09B30079C0F2 /* WTCustomAlertView.m */,
+			);
+			path = CustomAlertView;
 			sourceTree = "<group>";
 		};
 		CA4D01231FD7DB4300CAA5CF /* UIButton */ = {
@@ -485,6 +497,7 @@
 		CAF555F21FB14F3C00CD57F9 /* CustomUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				CA3A5C72264E09590079C0F2 /* CustomAlertView */,
 				CACDA06E22A52F9000339A87 /* BuoyView */,
 				CA2C316E21B5150700F78F79 /* FeatureGuide */,
 				CAE945AB214B5E58000D17BE /* TitlePickerViewControll */,
@@ -579,6 +592,7 @@
 		CAF555CF1FB1448C00CD57F9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WT;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Wynter;
 				TargetAttributes = {
@@ -657,6 +671,7 @@
 				CAC0FE951FB1A7CF000CF49D /* TestViewController.m in Sources */,
 				CAF556041FB1500700CD57F9 /* HotelCalendarHeaderReusableView.m in Sources */,
 				CABA35F720AEAD080020F08F /* MJPropertyKey.m in Sources */,
+				CA3A5C75264E09B30079C0F2 /* WTCustomAlertView.m in Sources */,
 				CA7D2D22213E746A00BC2640 /* TopSheetViewController.m in Sources */,
 				CABA366D20AEAF050020F08F /* MASViewAttribute.m in Sources */,
 				CA7D2D30213E7E7200BC2640 /* TopSheetDemoViewController.m in Sources */,
